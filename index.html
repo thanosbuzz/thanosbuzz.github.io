@@ -4,11 +4,11 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>Thanos Buzz | Feed Automático Noticias Ticas </title>
+        <title>Hola jhonny</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+        <link rel="apple-touch-icon" href="src/apple-touch-icon.png">
         <!-- Place favicon.ico in the root directory -->
 
         <link rel="stylesheet" href="src/css/normalize.css">
@@ -21,102 +21,150 @@
     </head>
     <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
 
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand page-scroll" href="#page-top">Transportes Cordero S.A </a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav">
+                    <!-- Hidden li included to remove active class from facturas link when scrolled up past facturas section -->
+                    <li class="hidden">
+                        <a class="page-scroll" href="#page-top"></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#facturas">Información General y Documentos </a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#services">Productos y Servicios</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#contacts">Contacto</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Intro Section -->
+    <section id="intro" class="intro-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+
+                    <div class="container " ng-controller="ngController" >
+                        <section >
+                            <ul class="nav nav-pills">
+                                <li ng-class="{active:isSet(1)}"><a href ng-click="setTab(1)">Trabajos <span class="badge"> 14 </span></a> </li>
+                                <li ng-class="{active:isSet(2)}"><a href ng-click="setTab(2)">Facturas <span class="badge"> 12 </span></a> </a></li>
+                                <li ng-class="{active:isSet(3)}"><a href ng-click="setTab(3)">Clientes <span class="badge"> 10 </span></a> </a></li>
+                                <li ng-class="{active:isSet(4)}"><a href ng-click="setTab(4)">Bitácora <span class="badge"> 10 </span></a> </a></li>
+                            </ul>
+
+                            <div ng-show="isSet(1)" >
+                                <div class="row">
+                                    <input class="input-lg " type="text" placeholder="search">
+                                </div>
+                                <hr>
+                                <div class="row">
+                                    <div class="col-md-3 btn btn-success" style="margin-left: 10px; margin-top: 10px"
+                                         ng-repeat="trabajo in trabajos">
+                                        <h4 class="pull-left">{{trabajo.id}} <span class="badge pull-right"> {{trabajo.fecha_ver_trabajo}}</span></h4>
+                                        <h5>Ronald Granados</h5>
+                                        <h5>{{trabajo.descripcion}}</h5>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                            <div ng-show="isSet(2)">
+                                <h4>Tab 2</h4>
+                            </div>
+                            <div ng-show="isSet(3)">
+                                <h4>Tab 3</h4>
+                            </div>
+                            <div ng-show="isSet(4)">
+                                <h4>Tab 4</h4>
+                            </div>
+                        </section>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- facturas Section -->
+    <section id="facturas" class="facturas-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1>Informacion General y Documentos</h1>
+
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Services Section -->
     <section id="services" class="services-section" >
         <div class="container">
             <div class="row"   >
+                <div class="col-lg-12  " >
 
-                <h1>Thanos Buzz </h1>
-                <hr>
-                <div class="col-md-12">
-                    <div class="col-md-4"></div>
-                    <div class="col-md-4">
-                        <div class="input-group input-group-lg">
-                            <span class="input-group-addon" id="basic-addon1"><i class="fa fa-search"></i></span>
-                            <input type="text" class="form-control" placeholder="Buscar en ThanosBuzz" aria-describedby="basic-addon1">
+                    <h1>Productos y Servicios</h1>
+                    <!--
+                    <div ng-controller="contactsController as contacts">
+                        <span>{{contacts.remaining()}} of {{contacts.todos.length}} remaining</span>
+                        [ <a href="" ng-click="contacts.archive()">archive</a> ]
+                        <div  class=" row unstyled">
+                            <div class="panel col-md-4" ng-repeat="todo in contacts.todos">
+                                <label class="checkbox">
+                                    <input type="checkbox" ng-model="todo.done">
+                                    <span class="done-{{todo.done}}">{{todo.FirstName}}</span>
+                                </label>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-md-4"></div>
+
+                    </div> -->
+
                 </div>
+            </div>
+        </div>
+    </section>
 
-                <div class="row">
-                    <br><br><br>
-                    <div class="col-md-12" >
+    <section id="contacts" class="contact-section" >
+        <div class="container">
+            <div class="row"   >
+                <div class="col-lg-12  " >
 
-                        <div class="col-md-3"></div>
-
-                        <div class="col-md-6 panel panel-success text-center">
-
-                            <div class="">
-                                <h5 class="pull-left">
-                                    <i class="fa fa-feed"></i>
-                                    BuzzFeed
-                                </h5>
+                    <h1>Contacto</h1>
+                    <!--
+                    <div ng-controller="contactsController as contacts">
+                        <span>{{contacts.remaining()}} of {{contacts.todos.length}} remaining</span>
+                        [ <a href="" ng-click="contacts.archive()">archive</a> ]
+                        <div  class=" row unstyled">
+                            <div class="panel col-md-4" ng-repeat="todo in contacts.todos">
+                                <label class="checkbox">
+                                    <input type="checkbox" ng-model="todo.done">
+                                    <span class="done-{{todo.done}}">{{todo.FirstName}}</span>
+                                </label>
                             </div>
-
-                            <div class="">
-                                <h5 class="pull-right">
-                                    <i class="fa fa-calendar-check-o"></i>
-                                    24-02-2016: 00:14
-                                </h5></div>
-                            </div>
-                        <div class="col-md-3">
-
                         </div>
 
+                    </div> -->
 
-                     </div>
-                    <div class="col-md-12" >
-
-                        <div class="col-md-3"></div>
-
-                        <div class="col-md-6 panel panel-success text-center">
-
-                            <div class="">
-                                <h5 class="pull-left">
-                                    <i class="fa fa-feed"></i>
-                                    BuzzFeed
-                                </h5>
-                            </div>
-
-                            <div class="">
-                                <h5 class="pull-right">
-                                    <i class="fa fa-calendar-check-o"></i>
-                                    24-02-2016: 00:14
-                                </h5></div>
-                        </div>
-                        <div class="col-md-3">
-
-                        </div>
-
-
-                    </div>
-                    <div class="col-md-12" >
-
-                        <div class="col-md-3"></div>
-
-                        <div class="col-md-6 panel panel-success text-center">
-
-                            <div class="">
-                                <h5 class="pull-left">
-                                    <i class="fa fa-feed"></i>
-                                    BuzzFeed
-                                </h5>
-                            </div>
-
-                            <div class="">
-                                <h5 class="pull-right">
-                                    <i class="fa fa-calendar-check-o"></i>
-                                    24-02-2016: 00:14
-                                </h5></div>
-                        </div>
-                        <div class="col-md-3">
-
-                        </div>
-
-
-                    </div>
                 </div>
             </div>
         </div>
